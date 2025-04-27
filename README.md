@@ -6,7 +6,7 @@ Valitud lehekülg on [Maardu linna kodulehekülg](https://maardu.ee/).
 
 ## Seadistamise juhis
 
-Vaja läheb: Node.js, Git
+Vaja läheb: Node.js, npm, Git
 
 - 1. Navigeerida kaustad, kuhu soovite projekti kloonida.
 - 2. Avada command prompt.
