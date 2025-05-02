@@ -2,6 +2,7 @@ html {
   padding: 0;
   margin: 0;
   font-family: "Roboto", sans-serif;
+  font-weight: 400;
 }
 
 body {
@@ -183,4 +184,28 @@ header {
 .login_container .login_button p, .login_container .login_button i, .login_container .login_button .fa-solid, .login_container .login_button .fa-arrow-right-to-bracket {
   color: white;
   margin: 5px 0;
+}
+
+footer {
+  width: 100vw;
+  height: 25vh;
+  background-color: #0A99AC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+}
+footer .contacts {
+  display: flex;
+  flex-direction: column;
+}
+footer .contacts p {
+  color: white;
+  margin: 2px;
+}
+footer .EUlogoContainer img {
+  max-height: 100px;
+  max-width: 100%;
+  height: auto;
+  width: auto;
 }/*# sourceMappingURL=main.css.map */
