@@ -1,8 +1,26 @@
 <header>
-    <h1>Header</h1>
-    <p>Language bar here</p>
-    <p>Logo</p>
-    {{> search }}
-    {{> nav }}
-    {{> login_button }}
+
+    <div class="languageBar">
+        <button class="languageButton">EST</button>
+        <button class="languageButton">ENG</button>
+        <button class="languageButton">RUS</button>
+    </div>
+
+    <div class="headerContent">
+
+        <div class="logo_container">
+            <img class="logo" src="../../assets/maardu_logo.png"></img>
+        </div>
+
+        <div class="searchNav_container">
+            {{> search }}
+            {{> nav }}
+        </div>
+
+        <div class="login_container">
+            {{> login_button }}
+        </div>
+
+    </div>
+
 </header>
