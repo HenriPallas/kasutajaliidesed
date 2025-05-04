@@ -1,15 +1,24 @@
 <header>
-
-    <div class="languageBar">
-        <button class="languageButton">EST</button>
-        <button class="languageButton">ENG</button>
-        <button class="languageButton">RUS</button>
+    <div class="languageBar-mobile">
+        <div class="hamburgerContainer">
+            <i class="fa-solid fa-bars hamburgerIcon"></i>
+        </div>
+        <div class="languageBar">
+            <button class="languageButton">EST</button>
+            <button class="languageButton">ENG</button>
+            <button class="languageButton">RUS</button>
+        </div>
     </div>
 
     <div class="headerContent">
 
-        <div class="logo_container">
-            <img class="logo" src="../../assets/maardu_logo.png" alt="Maardu linna logo"></img>
+        <div class="logo-login-container-mobile">
+            <div class="logo_container">
+                <img class="logo" src="../../assets/maardu_logo.png" alt="Maardu linna logo"></img>
+            </div>
+            <div class="login_container_mobile">
+                {{> login_button }}
+            </div>
         </div>
 
         <div class="searchNav_container">
