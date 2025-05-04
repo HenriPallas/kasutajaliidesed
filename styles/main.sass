@@ -1,3 +1,18 @@
+// ------------------- SASS -------------------
+// Variables
+
+$primary-color: #0A99AC
+$primary-color-dark: darken($primary-color, 5%)
+$secondary-color: #F88F08
+$secondary-color-dark: darken($secondary-color, 10%)
+$secondary-color-light: lighten($secondary-color, 10%)
+$tertiary-color: #CEEBEE
+
+$card-primary-color: rgba(102, 152, 222, 0.15)
+$card-secondary-color: rgba(24, 96, 202, 1)
+$card-tertiary-color: rgba(9, 51, 166, 1)
+$card-tertiary-color-dark: darken(rgba(9, 51, 166, 1),5%)
+
 html
     padding: 0
     margin: 0
@@ -9,15 +24,18 @@ body
     margin: 0
     display: flex
     flex-direction: column
+    height: 100%
 
-// Site header style
+// ------------------- Header styles -------------------
 
 header
-    width: 100vw
+    width: 100%
     height: 25vh
+    min-height: 150px
+    max-height: 256px
     display: flex
     flex-direction: column
-
+    
 // Language selection bar style
 
 .languageBar
@@ -26,7 +44,6 @@ header
     height: 15%
     width: 100%
     justify-content: flex-end
-    padding-right: 10px
 
     .languageButton
         background-color: rgba(0,0,0,0)
@@ -38,12 +55,15 @@ header
 
     .languageButton:hover
         cursor: pointer
-        background-color: darken(#0A99AC, 5%)
+        background-color: $primary-color-dark
 
 .headerContent
     display: flex
+    justify-content: center
+    align-items: center
     width: 100%
-    height: 80%
+    height: 85%
+    flex: 1
 
 // Logo style
 
@@ -65,13 +85,13 @@ header
     .logo:hover
         cursor: pointer
 
-
-
 // Search and navigation menu container
 
 .searchNav_container
     display: flex
     flex-direction: column
+    align-items: center
+    justify-content: center
     height: 100%
     flex: 1
 
@@ -153,12 +173,12 @@ header
         transition: border-bottom 0.3s
 
     .active
-        border-bottom: 5px solid #F88F08
+        border-bottom: 5px solid $secondary-color
         font-weight: bold
 
     .nav-button:hover,
     .nav-button:focus
-        border-bottom: 5px solid lighten(#F88F08, 10%)
+        border-bottom: 5px solid $secondary-color-light
         outline: none
         cursor: pointer
 
@@ -176,7 +196,7 @@ header
         flex-direction: column
         justify-content: center
         align-items: center
-        background-color: #F88F08
+        background-color: $secondary-color
         border-top-left-radius: 15px
         border-bottom-left-radius: 15px
         border: none
@@ -186,19 +206,189 @@ header
         cursor: pointer
         transition: background-color 0.3s
         &:hover
-            background-color: darken(#F88F08, 10%)
+            background-color: $secondary-color-dark
 
         p, i, .fa-solid, .fa-arrow-right-to-bracket
             color: white
             margin: 5px 0
 
+// ------------------- Content styles -------------------
+
+.content
+    min-height: 75vh
+    height: auto
+
+    .carousell
+        display: flex
+        height: auto
+        background-color: $tertiary-color
+
+        .carousellText
+            display: flex
+            flex-direction: column
+            heigth: 100%
+            width: 55%
+
+            .text
+                display: flex
+                flex-direction: column
+                justify-content: center
+                align-items: center
+                height: 90%
+                width: 100%
+
+                p
+                    width: 35%
+                    heigth: 100%
+                    font-size: 14px
+                
+                .textTitle
+                    font-size: 20px
+
+            .turnButtons
+                display: flex
+                justify-content: center
+                align-items: center
+                gap: 25px
+                height: 10%
+                width: 100%
+                background-color: $primary-color
+
+                .turnButton
+                    color: white
+                    height: 25px
+                    width: 25px
+
+                .turnButton:hover
+                    cursor: pointer
+
+        img
+            display: flex
+            justify-content: flex-end
+            height: auto
+            width: 45%
+            margin-right: 25px
+
+    .cardGrid
+        display: grid
+        grid-template-columns: repeat(2, 1fr)
+        padding: 25px
+        gap: 40px
+
+        .card, .card_events, .card_important, .card_contacts, .card_crisis
+            width: 100%
+            height: 75vh
+            display: flex
+            justify-content: center
+
+        .card-container
+            display: flex
+            flex-direction: column
+            width: 75%
+            height: 100%
+            text-align: center
+            border-radius: 15px
+            background-color: $card-primary-color
+
+        .cardTitle
+            display: flex
+            justify-content: center
+            align-items: center
+            width: 100%
+            height: 15%
+            margin: 0
+            text-align: center
+            font-size: 20px
+            border-top-left-radius: 15px
+            border-top-right-radius: 15px
+            color: white
+            background-color: $card-secondary-color
+
+        .cardInfo
+            display: flex
+            flex-direction: column
+            width: calc(100% - 50px)
+            height: 70%
+            margin-left: 50px
+            margin-top: 25px
+            overflow: hidden
+            text-overflow: ellipsis
+            white-space: normal
+
+            p
+                text-align: left
+                text-overflow: ellipsis
+
+                i, .fa-solid, .fa-arrow-right
+                    margin-right: 10px
+
+        
+        .cardFormsInfo
+            display: flex
+            flex-direction: column
+            align-items: center
+            width: 100%
+            height: 70%
+            margin-top: 25px
+            overflow: hidden
+            text-overflow: ellipsis
+            white-space: normal
+            gap: 25px
+
+            p
+                text-align: left
+                text-overflow: ellipsis
+            
+            .cardFormsButton
+                display: flex
+                justify-content: space-between
+                align-items: center
+                width: 75%
+                height: 25%
+                border: none
+                border-radius: 15px
+                color: white
+                background-color: $primary-color
+                font-size: 15px
+
+                .cardFormIcons1
+                    width: 50px
+                    height: 50px
+
+                .cardFormIcons2
+                    width: 25px
+                    height: 25px
+
+            .cardFormsButton:hover
+                cursor: pointer
+                background-color: $primary-color-dark
+
+        .cardButton-Container
+            width: 100%
+            height: 20%
+            display: flex
+            justify-content: center
+            align-items: center
+
+            .card-button
+                width: 35%
+                height: 35%
+                color: white
+                border: none
+                border-radius: 25px
+                background-color: $card-tertiary-color
+
+            .card-button:hover
+                background-color: $card-tertiary-color-dark
+                cursor: pointer
+
 
 // ------------------- Footer styles -------------------
 
 footer
-    width: 100vw
+    width: 100%
     height: 25vh
-    background-color: #0A99AC
+    background-color: $primary-color
     display: flex
     align-items: center
     justify-content: center
