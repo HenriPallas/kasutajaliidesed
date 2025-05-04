@@ -14,10 +14,10 @@ Vaja läheb: Node.js, npm, Git
 - 4. Oodata, kuni lõpetanud.
 - 5. Sisestada käsk: "npm install"
 - 6. Ongi valmis.
-- 7. Kävitamiseks navigeerida kausta "pages" ning avada fail "index.html"
+- 7. Kävitamiseks avada fail "index.html"
 
 ## Autorid:
-- Henri Rihard Pallas: Programmeerimine.
-- Anna Borissova: Disain, Alt tekst, Kommentaarid.
+- Henri Rihard Pallas: Programmeerimine, kommentaarid.
+- Anna Borissova: Disain, Alt tekstid, Kommentaarid.
 - German Vesi: Disain.
 

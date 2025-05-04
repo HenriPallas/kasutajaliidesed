@@ -205,6 +205,19 @@ header {
   margin: 5px 0;
 }
 
+.empty-content {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  min-height: 800px;
+  max-height: 1000px;
+  height: 1000px;
+  background-color: #CEEBEE;
+}
+.empty-content p {
+  font-size: 20px;
+}
+
 .content {
   height: auto;
 }
@@ -505,6 +518,9 @@ footer .EUlogoContainer img {
   }
   .login_container {
     display: none;
+  }
+  .empty-content {
+    margin-top: 10px;
   }
   .content {
     height: auto;
