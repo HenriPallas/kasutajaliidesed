@@ -3,7 +3,7 @@
 Töö on tehtud Tallinna Ülikooli kursuse "Kasutajaliideste disain ja arendus" raames.
 Teemaks on valitud ametliku lehekülje disaini ümbertegemine ning parandamine.
 Valitud lehekülg on [Maardu linna kodulehekülg](https://maardu.ee/).
-Figma prototüüb asub siin: https://www.figma.com/design/5o2xJWXztoG4ClpLkQBBwr/RE?node-id=0-1&t=iQSPrXPMXLltHS4h-1
+Figma prototüüp asub siin: https://www.figma.com/design/5o2xJWXztoG4ClpLkQBBwr/RE?node-id=0-1&t=iQSPrXPMXLltHS4h-1
 
 ## Seadistamise juhis
 
