@@ -1,7 +1,11 @@
 // --- Defining constants. ---
 
+// Defining paths to templates.
+
 const templates = "../templates";
 const partials = templates + "/partials";
+
+// Defining the location of used templates.
 
 const headerFile = partials + "/header.hbs";
 const searchFile = partials + "/search.hbs";
@@ -18,10 +22,16 @@ const cardCrisisFile = partials + "/card_crisis.hbs"
 const cardFormsFile = partials + "/card_forms.hbs"
 const footerFile = partials + "/footer.hbs";
 
+// Defining the target for the template.
 const mainTemplate = $("#main-page").html();
 const target = "body";
 
 // --- Template compiler function ---
+// Gets all template files.
+// When done, passes them to a function.
+// The function registers the partials.
+// Then the function compiles the partials and templates into html.
+// The compiled html is passed to the target.
 
 $(function() {
     $.when(

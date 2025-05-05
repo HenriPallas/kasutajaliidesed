@@ -1,5 +1,8 @@
 // ------------------- SASS -------------------
+
 // Variables
+
+// Main site colors.
 
 $primary-color: #0A99AC
 $primary-color-dark: darken($primary-color, 5%)
@@ -8,15 +11,43 @@ $secondary-color-dark: darken($secondary-color, 10%)
 $secondary-color-light: lighten($secondary-color, 10%)
 $tertiary-color: #CEEBEE
 
+// Colors for content cards.
+
 $card-primary-color: rgba(102, 152, 222, 0.15)
 $card-secondary-color: rgba(24, 96, 202, 1)
 $card-tertiary-color: rgba(9, 51, 166, 1)
 $card-tertiary-color-dark: darken(rgba(9, 51, 166, 1),5%)
 
+// Fonts
+$main-font: 'Roboto', sans-serif
+
+// Paddings
+$padding-small: 5px
+$padding-medium: 10px
+$padding-large: 25px
+
+// Mixins
+
+// Centering flex content.
+
+@mixin flex-center 
+  display: flex
+  justify-content: center
+  align-items: center
+
+// Handling text overflow.
+
+@mixin truncate
+  overflow: hidden
+  text-overflow: ellipsis
+  white-space: normal
+
+// ------------------- Desktop styling -------------------
+
 html
     padding: 0
     margin: 0
-    font-family: 'Roboto', sans-serif
+    font-family: $main-font
     font-weight: 400
 
 body
@@ -30,9 +61,9 @@ body
 
 header
     width: 100%
-    height: 25vh
-    min-height: 150px
-    max-height: 256px
+    min-height: 200px
+    max-height: 400px
+    height: auto
     display: flex
     flex-direction: column
     
@@ -55,7 +86,7 @@ header
             background-color: rgba(0,0,0,0)
             border: none
             color: white
-            padding: 5px
+            padding: $padding-small
             margin: 0
             margin-right: 25px
 
@@ -63,10 +94,10 @@ header
             cursor: pointer
             background-color: $primary-color-dark
 
+// Container for header components: logo, search, navigation, login button.
+
 .headerContent
-    display: flex
-    justify-content: center
-    align-items: center
+    @include flex-center
     width: 100%
     height: 85%
     flex: 1
@@ -80,12 +111,10 @@ header
 // Logo style
 
 .logo_container
-    display: flex
-    justify-content: center
-    align-items: center
+    @include flex-center
     width: 20%
     min-width: 80px
-    padding: 5px
+    padding: $padding-small
     box-sizing: border-box
     
     .logo
@@ -97,22 +126,18 @@ header
     .logo:hover
         cursor: pointer
 
-// Search and navigation menu container
+// Container for placing search and navigation on top of each other.
 
 .searchNav_container
-    display: flex
+    @include flex-center
     flex-direction: column
-    align-items: center
-    justify-content: center
-    height: 100%
-    flex: 1
+    gap: 25px
+    margin-top: 5px
 
 // Search bar style
 
 .search
-    display: flex
-    justify-content: center
-    align-items: center
+    @include flex-center
     width: 100%
     height: 60%
 
@@ -161,16 +186,14 @@ header
 .nav
     display: flex
     justify-content: center
-    align-items: flex-end
+    align-items: center
     flex-wrap: wrap
     flex: none
     height: 40%
     gap: 10px
 
     .nav-button
-        display: flex
-        justify-content: center
-        align-items: center
+        @include flex-center
         flex: 1 1 100px
         max-width: 120px
         min-width: 80px
@@ -180,7 +203,7 @@ header
         text-align: center
         word-wrap: break-word
         white-space: normal
-        padding: 5px
+        padding: $padding-small
         border-bottom: 5px solid transparent
         transition: border-bottom 0.3s
 
@@ -204,10 +227,8 @@ header
     height: 100%
 
     .login_button
-        display: flex
+        @include flex-center
         flex-direction: column
-        justify-content: center
-        align-items: center
         background-color: $secondary-color
         border-top-left-radius: 15px
         border-bottom-left-radius: 15px
@@ -225,6 +246,9 @@ header
             margin: 5px 0
 
 // ------------------- Content styles -------------------
+
+// Styling for when the page has no content to show.
+
 .empty-content
     display: flex
     justify-content: center
@@ -237,9 +261,12 @@ header
     p
         font-size: 20px
 
+// Styling for main page content.
 
 .content
     height: auto
+
+    // Styling for carousell
 
     .carousell
         display: flex
@@ -253,10 +280,8 @@ header
             width: 55%
 
             .text
-                display: flex
+                @include flex-center
                 flex-direction: column
-                justify-content: center
-                align-items: center
                 height: 90%
                 width: 100%
 
@@ -269,9 +294,7 @@ header
                     font-size: 20px
 
             .turnButtons
-                display: flex
-                justify-content: center
-                align-items: center
+                @include flex-center
                 gap: 25px
                 height: 10%
                 width: 100%
@@ -292,10 +315,12 @@ header
             width: 45%
             margin-right: 25px
 
+    // Styling for content cards and aligning them with a grid.
+        
     .cardGrid
         display: grid
         grid-template-columns: repeat(2, 1fr)
-        padding: 25px
+        padding: $padding-large
         gap: 40px
 
         .card, .card_events, .card_important, .card_contacts, .card_crisis
@@ -314,9 +339,7 @@ header
             background-color: $card-primary-color
 
         .cardTitle
-            display: flex
-            justify-content: center
-            align-items: center
+            @include flex-center
             width: 100%
             height: 15%
             margin: 0
@@ -334,9 +357,7 @@ header
             height: 70%
             margin-left: 50px
             margin-top: 25px
-            overflow: hidden
-            text-overflow: ellipsis
-            white-space: normal
+            @include truncate
 
             p
                 text-align: left
@@ -353,9 +374,7 @@ header
             width: 100%
             height: 70%
             margin-top: 25px
-            overflow: hidden
-            text-overflow: ellipsis
-            white-space: normal
+            @include truncate
             gap: 25px
 
             p
@@ -389,9 +408,7 @@ header
         .cardButton-Container
             width: 100%
             height: 20%
-            display: flex
-            justify-content: center
-            align-items: center
+            @include flex-center
 
             .card-button
                 width: 35%
@@ -405,8 +422,9 @@ header
                 background-color: $card-tertiary-color-dark
                 cursor: pointer
 
-
 // ------------------- Footer styles -------------------
+
+// Styles for the site footer
 
 footer
     width: 100%
@@ -437,7 +455,7 @@ footer
     
 @media (max-width: 600px)
 
-    body
+    // Mobile view styling for the header.
 
     header 
         height: auto
@@ -449,10 +467,10 @@ footer
         .languageBar-mobile
             display: flex
 
+            // Styling to add a hamburger menu.
+
             .hamburgerContainer
-                display: flex
-                justify-content: center
-                align-items: center
+                @include flex-center
                 width: 75px
                 height: 50px
                 background-color: $primary-color
@@ -464,6 +482,7 @@ footer
                 .hamburgerIcon:hover
                     cursor: pointer
 
+            // Mobile styling for the language bar.
 
             .languageBar
                 flex: 1
@@ -473,9 +492,11 @@ footer
 
                 .languageButton
                     font-size: 1em
-                    padding: 5px
+                    padding: $padding-small
                     margin-right: 10px
         
+        // Mobile view styling to align logo, login and navigation.
+            
         .headerContent
             display: flex
             flex-direction: column
@@ -504,10 +525,8 @@ footer
                     flex: 1
 
                     .login_button
-                        display: flex
+                        @include flex-center
                         flex-direction: column
-                        justify-content: center
-                        align-items: center
                         background-color: $secondary-color
                         border-radius: 0px
                         border: none
@@ -549,8 +568,12 @@ footer
     .login_container
         display: none
 
+    // Mobile view styling for pages with no content.
+
     .empty-content
         margin-top: 10px
+
+    // Styling for main page content in mobile view.
 
     .content
         height: auto
@@ -562,7 +585,7 @@ footer
             display: flex
             flex-direction: column
             grid-template-columns: none
-            padding: 25px
+            padding: $padding-large
             gap: 40px
 
             .card, .card_events, .card_important, .card_contacts, .card_crisis
@@ -586,9 +609,7 @@ footer
                 height: 70%
                 margin-top: 0px
                 margin-left: 0px
-                overflow: hidden
-                text-overflow: ellipsis
-                white-space: normal
+                @include truncate
 
                 p
                     text-overflow: ellipsis
@@ -605,9 +626,7 @@ footer
                 width: 100%
                 height: 70%
                 margin-top: 25px
-                overflow: hidden
-                text-overflow: ellipsis
-                white-space: normal
+                @include truncate
                 gap: 25px
 
                 p
@@ -630,18 +649,18 @@ footer
                     max-height: 50px
                     height: 50px
 
+    // Footer styles in mobile view.
+
     footer
         height: auto
         flex-direction: column
         gap: 25px
 
         .contacts
-            display: flex
+            @include flex-center
             flex-direction: column
-            justify-content: center
-            align-items: center
             text-align: center
-            padding: 10px
+            padding: $padding-medium
 
         .EUlogoContainer
             
